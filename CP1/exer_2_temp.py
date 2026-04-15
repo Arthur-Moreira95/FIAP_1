@@ -1,14 +1,18 @@
 temp = int(input("Qual é a temperatura:  "))
-escala = input("Você deseja que a escala seja em Fahrenheit ou celcius?\n[F] para fahrenheit ou [C] para celcius: ").upper()
-print("Agora ")
-if escala == "F":
-    temp = temp * 1.8 + 32
+escala = input("A temperatura está em Celsius ou Fahrenheit?\n[F] para fahrenheit ou [C] para celcius: ").strip().upper()
 
-elif escala == "C":
-    temp = (temp - 32) * 1.8
+if escala == 'C':
+
+    resultado = temp * 1.8 + 32
+    print(f"{temp}°C equivale a {resultado:.2f}°F")
+elif escala == 'F':
+
+    resultado = (temp - 32) * 5/9
+    print(f"{temp}°F equivale a {resultado:.2f}°C")
+else:
+    print("Escala inválida! Por favor, use 'C' ou 'F'.")
 
 
-print(f"A temperatura convertida {temp}")
 
 
 
